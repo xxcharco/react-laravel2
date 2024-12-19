@@ -14,10 +14,13 @@ class BooksFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition()
     {
+        $categorys = ['React', 'Vue', 'Laravel'];
         return [
-            //
+            'title' => $this->faker->text(12),
+            'content' => $this->faker->text(20),
+            'category' => $this->faker->randomElement($categorys)
         ];
     }
 }
